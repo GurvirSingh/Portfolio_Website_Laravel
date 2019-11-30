@@ -1,0 +1,1100 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    color: #777777;
+    background-color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    background-image: url('20555.jpg');
+    background-size: cover;
+}
+
+header {
+    color: #000033;
+    height: 60px;
+    width: 100%;
+    background-color: #777777;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Rajdhani', sans-serif;
+}
+
+nav {
+    font-weight: bold;
+    background-color: #777777;
+}
+
+footer {
+    font-size: 0.70em;
+    font-style: italic;
+    text-align: center;
+}
+
+#footer_links {
+    margin-top: -5px;
+    margin-right: 20px;
+    font-size: 20px;
+    letter-spacing: 10px;
+}
+
+button {
+    background: linear-gradient(to right, #3fcaff 0%, #a4ffb0 51%, #3fcaff 100%);
+    background-size: 200% auto;
+    padding: 0px 35px;
+    color: #222222;
+    margin-left: 0%;
+}
+
+a {
+    color: #000033;
+    text-decoration: none;
+}
+
+#nav_bar ul {
+    list-style-type: none;
+    margin-top: 22px;
+}
+
+#nav_bar ul li {
+    display: inline;
+    padding-right: 10px;
+}
+
+#nav_bar ul li:hover {
+    color: white;
+}
+
+#nav_bar {
+    float: right;
+}
+
+#name {
+    float: left;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+#wrapper {
+    text-align: center;
+}
+
+main {
+    text-align: center;
+    margin: auto;
+    margin-top: 90px; 
+}
+
+.dl_resume {
+    border: 0px;
+    height: 70px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.dl_resume:hover {
+    color: #333ed6;
+}
+
+footer {
+    height: 70px;
+    width: 100%;
+    background-color: #f7f7f7;
+    bottom: 0;
+    position: fixed;
+}
+
+.none {
+    display: none;
+}
+/* About me page styling */
+
+.form_about_me {
+    height: 650px;
+    width: 400px;
+    background-color: #f7f7f7;
+    margin: auto;
+    padding: 20px;
+    margin-top: -150px;
+    text-align: left;
+    border-radius: 5px;
+    opacity: 1;
+}
+
+.form_about_me .in_text {
+    height: 40px;
+    width: 400px
+}
+
+.form_about_me button {
+    margin: auto;
+    height: 40px;
+    width: 400px;
+    border: 0px;
+}
+
+input { 
+    font-size: 18px;
+}
+/* skills page */
+
+.skills {
+    height: 800px;
+    width: 800px;
+    //background-color:black;
+    margin: auto;
+}
+
+.skills .form_about_me {
+    min-height: 300px;
+}
+
+#class_div_left {
+    float: left;
+    height: 800px;
+    width: 40%;
+    /* background-color: red; */
+}
+
+#class_div_left img {
+    background-color: orange;
+}
+
+#class_div_left h1 {
+    font-size: 80px;
+    font-weight: bold;
+}
+
+#move_up {
+    margin-top: -50px;
+}
+
+img {
+    border: 5px solid #6b808c;
+}
+
+#class_div_right table td {
+    padding: 50px;
+}
+
+#class_div_right {
+    float: right;
+    /* background-color: black; */
+}
+
+.skills_div_1 {
+    min-height: 827px;
+    /* background-color: #333ed6; */
+}
+
+.skills_div_2 {
+    margin-top: 100px;
+    /* background-color: black; */
+}
+
+.skills_bars {
+    min-height: 1400px;
+    width: 100%;
+    /* background-color: blue; */
+}
+
+.round {
+    height: 200px;
+    width: 200px;
+    background-color: blue;
+    border-radius: 50%;
+    margin-left: 20px;
+    float: left;
+    margin-left: 60px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.round_text {
+    position: absolute;
+    color: white;
+    margin-left: -30px;
+}
+
+.round_text1 {
+    position: absolute;
+    margin-top: -300px;
+    color: white;
+    margin-left: -35px;
+}
+
+.round_cover2 {
+    position: absolute;
+    height: 160px;
+    width: 160px;
+    background-color: blue;
+    margin-top: -380px;
+    margin-left: 20px;
+    border-radius: 50%;
+}
+
+.round_per1 {
+    height: 400px;
+    width: 100px;
+    position: relative;
+    background-color: white;
+}
+
+.round_per2 {
+    height: 100px;
+    width: 100px;
+    position: relative;
+    float: right;
+    background-color: white;
+}
+
+.round_text2 {
+    position: absolute;
+    margin-top: 90px;
+    color: white;
+    margin-left: 20px;
+}
+
+.round_cover1 {
+    position: absolute;
+    height: 160px;
+    width: 160px;
+    background-color: blue;
+    margin-top: -80px;
+    margin-left: 20px;
+    border-radius: 50%;
+}
+
+.round_cover {
+    position: absolute;
+    height: 170px;
+    width: 170px;
+    background-color: blue;
+    margin-top: 20px;
+    margin-left: 10px;
+    border-radius: 50%;
+}
+
+.round_per {
+    height: 100px;
+    width: 100px;
+    position: relative;
+    background-color: white;
+}
+
+#software {
+    /* background-color: black; */
+    margin: auto;
+    text-align: center;
+}
+#software table {
+    margin: auto;
+}
+#software td {
+    padding: 20px 10px;
+    /* background-color: red; */
+}
+
+#software_bottom {
+    height: 200px;
+    width: 100%;
+    /* background-color: rebeccapurple; */
+    text-align: center;
+    overflow: hidden;
+}
+
+#software_bottom table {
+    margin: auto;
+}
+#software_bottom td {
+    padding: 10px;
+    text-align: center;
+    /* background-color: black; */
+    /* border: 4px solid blue; */
+}
+
+#software1 {
+    height: 500px;
+    width: 100%;    
+    /* background-color: pink; */
+    float: left;
+    overflow: hidden;
+}
+
+#softwarex {
+    height: 500px;
+    width: 100%;
+    /* background-color: pink; */
+    float: left;
+}
+
+#softwarez {
+    min-height: 500px;
+    width: 100%;
+    /* background-color: pink; */
+    float: left;
+}
+
+#software h3 {
+    margin-left: 20px;
+    font-size: 30px;
+}
+
+.progress {
+    display: block;
+    border-top: 10px solid white;
+    width: 100%;
+    margin-left: 20px;
+}
+
+.progress1 {
+    display: block;
+    position: absolute;
+    border-top: 10px solid blue;
+    width: 50%;
+    margin-top: -10px;
+}
+
+.progress2 {
+    display: block;
+    position: absolute;
+    border-top: 10px solid blue;
+    width: 40%;
+    margin-top: -10px;
+}
+
+.progress3 {
+    display: block;
+    position: absolute;
+    border-top: 10px solid blue;
+    width: 10%;
+    margin-top: -10px;
+}
+
+.progress4 {
+    display: block;
+    position: absolute;
+    border-top: 10px solid blue;
+    width: 34%;
+    margin-top: -10px;
+}
+
+.progress5 {
+    display: block;
+    position: absolute;
+    border-top: 10px solid blue;
+    width: 80%;
+    margin-top: -10px;
+}
+
+.progress6 {
+    display: block;
+    position: absolute;
+    border-top: 10px solid blue;
+    width: 10%;
+    margin-top: -10px;
+}
+
+.numbers {
+    display: block;
+    position: absolute;
+    margin-top: -20px;
+    margin-left: 50%;
+}
+
+.numbers1 {
+    display: block;
+    position: absolute;
+    margin-top: -24px;
+    margin-left: 40%;
+}
+
+.numbers2 {
+    display: block;
+    position: absolute;
+    margin-top: -24px;
+    margin-left: 10%;
+}
+
+.numbers3 {
+    display: block;
+    position: absolute;
+    margin-top: -24px;
+    margin-left: 34%;
+}
+
+.numbers4 {
+    display: block;
+    position: absolute;
+    margin-top: -24px;
+    margin-left: 80%;
+}
+
+.numbers5 {
+    display: block;
+    position: absolute;
+    margin-top: -24px;
+    margin-left: 10%;
+}
+
+.rec {
+    border: 3px solid blue;
+    padding: 10px;
+}
+
+.reco_text {
+    margin-left: 0px;
+}
+
+#software p {
+    margin-left: 20px;
+}
+
+
+/* portfolio page */
+
+.portfolio .form_about_me {
+    height: 350px;
+}
+
+.p_nav {
+    margin-top: 50px;
+    /* background-color: black; */
+    float: left;
+}
+
+.p_nav ul {
+    /* background-color: purple; */
+}
+
+.p_nav li {
+    display: inline-block;
+    padding: 10px;
+    background-color: beige;
+    border: 2px solid rgb(47, 47, 207);
+}
+
+.msg1,
+.msg2,
+.msg3,
+.msg4,
+.msg5,
+.msg6 {
+    display: block;
+    position: absolute;
+    margin-top: -25px;
+    font-size: 25px;
+}
+
+.msg1 {
+    margin-top: -20px;
+    margin-left: 0;
+}
+
+/* .msg2 {
+    margin-left: 40%;
+}
+
+.msg3 {
+    margin-left: 34%
+}
+
+.msg4 {
+    margin-left: 10%;
+}
+
+.msg5 {
+    margin-left: 80%;
+}
+
+.msg6 {
+    margin-left: 10%;
+} */
+
+.projects td {
+    /* background-color: pink; */
+}
+
+.projects {
+    /* background-color: #333ed6; */
+    width: 100%;
+}
+
+.projects img {
+    border: 0px;
+    height: 100px;
+    width: 100px;
+    background-size: cover;
+}
+
+.projects p {
+    /* margin-left: 450px;
+    font-size: 22px;
+    margin-top: -150px;
+    width: 200px;
+    background-color: red; */
+}
+
+#popup {
+    height: 150%;
+    width: 100%;
+    background-color: #000000;
+    position: absolute;
+    opacity: 0.9;
+    z-index: 3;
+}
+
+#popup span {
+    float: right;
+    margin-top: 5px;
+    margin-right: 8px;
+    color: white;
+}
+
+
+/* experience page */
+
+.experience .form_about_me {
+    height: 620px;
+}
+
+#exp_content {
+    margin-top: 100px;
+    /* background-color: #a4ffb0; */
+    text-align: left;
+}
+
+#exp_content_wrapper {
+    margin-top: -80px;
+}
+
+
+#exp_para {
+    margin-top: -70px;
+}
+
+/* myskills */
+
+#skills_section {
+    min-height: 500px;
+    /* background-color: orange; */
+    width: 100%;
+}
+
+.exp_date_main {
+    min-height: 200px;
+    width: 90%;
+    margin: auto;
+    margin-top: 40px;
+    /* background-color: #5151e4; */
+    border-bottom: 2px solid black;
+    position: relative;
+}
+
+.exp_date_main_content {
+    min-height: 150px;
+    width: 18%;
+    /* background-color: pink; */
+    float: left;
+    border-right: 2px solid black;
+    padding: 10px;
+    font-size: 20px;
+    color: black
+}
+
+.edmc_desc {
+    min-height: 150px;
+    width: 78%;
+    /* background-color:black; */
+    float: right;
+    font-weight: bold;
+    color: #777777;
+}
+
+#exp_heading {
+    font-size: 95px;
+}
+
+
+/* contact page */
+
+.contact .form_about_me {
+    margin-top: 150px;
+    min-height: 390px;
+    margin-bottom: 100px;
+}
+
+
+/* Login and signup popups */
+
+#cover {
+    height: 1000px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    position: absolute;
+    margin-top: -250px;
+    z-index: 1;
+    display: none;
+}
+
+#cover2 {
+    height: 1000px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    position: absolute;
+    margin-top: -250px;
+    z-index: 1;
+    display: none;
+}
+
+.login .form_about_me {
+    margin: auto;
+    min-height: 450px;
+}
+
+.cust1 {
+    height: 900px;
+    width: 100%;
+    /* background-color: beige; */
+    float: left;
+    font-size: 50px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.cust1 h1 {
+    font-size: 70px;
+}
+
+.cust1 p {
+    font-size: 20px;
+    margin-top: -80px;
+}
+
+.cust1 img {
+    height: auto;
+    width: 90%;
+}
+
+.cust2 {
+    height: 900px;
+    width: 100%;
+    /* background-color: black; */
+    float: left;
+    text-align: center;
+    /* margin-top: 100px; */
+    margin-bottom: 100px;
+}
+
+.cust2 h1 {
+    font-size: 80px;
+}
+
+.cust2 #pro {
+    font-size: 50px;
+    margin-top: -50px;
+}
+
+
+/* sign up */
+
+.signup .form_about_me {
+    margin: auto;
+    min-height: 800px;
+    margin-bottom: 200px;
+}
+
+/* Hire me */
+
+.exp_date_main_content .green {
+    margin-left: -50px;
+    margin-top: 10px;
+    background-color: green;
+    padding: 30px;
+}
+
+.exp_date_main_content .purple {
+    margin-left: -50px;
+    margin-top: 10px;
+    background-color: rgb(8, 63, 136);
+    padding: 30px;
+}
+
+.exp_date_main_content .pink {
+    margin-left: -50px;
+    margin-top: 10px;
+    background-color: rgb(182, 13, 168);
+    padding: 30px;
+}
+
+
+.hire_me_1 {
+    min-height: 1000px;
+    /* background-color: black; */
+    width: 100%;
+}
+
+.hire_me_2 {
+    height: 100px;
+    width: 80%;
+    margin-left: 100px;
+    margin-top: 80px;
+    margin-bottom: 400px;
+    /* background-color: blueviolet; */
+}
+
+.hire_me_2 h1 {
+    font-size: 50px;
+    /* background-color: black; */
+}
+
+.hire_me_2 img {
+    border-radius: 50%;
+    height: 250px;
+    width: 200px;
+    margin-left: 40px;
+}
+
+.recomm_text {
+    /* background-color: white; */
+    float: right;
+    overflow: hidden;
+    margin-bottom: 200px;
+}
+
+.recomm_image {
+    /* background-color: #333ed6; */
+    float: left;
+}
+
+.stats {
+    min-height: 500px;
+    width: 100%;
+    background-color: black;
+    float: left;
+    margin-bottom: 100px;
+    text-align: center;
+    background-image: url("71467.jpg");
+    overflow: hidden;
+}
+
+.stats_img {
+    min-height: 800px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* opacity: 0.3; */
+}
+
+.stats .round {
+    opacity: 1 !important;
+    background-color: rgb(88, 131, 24);
+    margin-right: 100px;
+    z-index: 2;
+    float: left;
+    margin-top: 100px;
+}
+
+.stats #p1 {
+    color: white;
+    font-weight: bold;
+    font-size: 42px;
+    float: left;
+    margin-top: 150px; 
+}
+
+.stats #p2 {
+    color: white;
+    font-weight: bold;
+    font-size: 42px;
+    float: left;
+    margin-top: 150px; 
+}
+
+.stats #p3 {
+    color: white;
+    font-weight: bold;
+    font-size: 42px;
+    float: left;
+    margin-top: 150px; 
+}
+
+.stats #p4 {
+    color: white;
+    font-weight: bold;
+    float: left;
+    font-size: 42px;
+    margin-top: 150px; 
+}
+
+.fasstat {
+    margin-top: 50px;
+    margin-left: 0px;
+    color: white;
+}
+
+
+/* About me */
+
+.about_me_left {
+    height: 680px;
+    width: 30%;
+    /* background-color: pink; */
+    float: left;
+    margin-top: -50px;
+}
+
+.about_me_left img {
+    height: 400px;
+    width: 300px;
+}
+
+.hire_me_2 img {
+    margin-left: 20px;
+    height: 200px;
+    width: 180px;
+    border-radius: 50%;
+}
+
+.hire_me_2 p {
+    font-size: 25px;
+}
+
+.hire_me_2 h2 {
+    margin-left: 260px;
+    margin-top: -20px;
+    color: rgb(230, 195, 0);
+    text-shadow: 0px 0px 1px black;
+    letter-spacing: 5px;
+}
+
+.about_me_right {
+    height: 800px;
+    width: 65%;
+    /* background-color: purple; */
+    float: right;
+    margin-top: -10px;
+    margin-bottom: 100px;
+}
+
+.about_me_right ol {
+    list-style-type: none;
+}
+
+/* .about_me_right p, a {
+    margin-left: 20px;
+} */
+
+.nav_more {
+    display: none;
+}
+
+.name_wrapper01 {
+    overflow: hidden;
+}
+
+#menu {
+    height: 250px;
+    width: 200px;
+    background-color: #777777;
+    position: absolute;
+    margin-left: 62%;
+    margin-top: 35px;
+    display:none;
+    z-index: 5;
+}
+/* Responsive design */
+
+@media only screen and (max-width: 1454px) {
+    #nav_bar {
+        margin-top: -15px;
+        width: 100%;
+        text-align:center;
+        overflow: hidden;
+    }
+
+    header{
+        text-align: center;
+    }
+
+    #name{
+        font-size: 22px;
+    }
+}
+
+@media only screen and (max-width: 1106px) {
+    .collapse {
+        display: none;
+    }
+
+    #nav_bar {
+        text-align: center;
+    }
+    .nav_more {
+        display: inline-block;
+    }
+
+    #nav_bar ul{
+        padding-right: 0px;
+        margin-left: -50px;
+    }
+
+    header{
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    #menu {
+        margin-left: 0px;
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 1100px) {
+    .about_me_left {
+        float: none;
+        width: 100%;
+    }
+
+    .about_me_right {
+        float: none;
+        width: 100%;
+    }
+}
+
+
+@media only screen and (max-width: 1630px) {
+    #class_div_right {
+        float: none;
+        width: 100%;
+    }
+
+    #class_div_right table {
+       width: 100%;
+    }
+
+    #class_div_left {
+        text-align: center;
+        float: none;
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 934px) {
+    .exp_date_main {
+        height: 250px;
+        margin-top: 40px;
+    }
+
+    .hire_me_2 {
+        margin-left: 0px;
+    }
+}
+
+@media only screen and (max-width: 742px) {
+    .exp_date_main_content {
+        float: none;
+        width: 90%;
+    }
+
+    .edmc_desc {
+        float: none;
+        width: 100%;
+    }
+
+    .exp_date_main {
+        height: 450px;
+        margin-top: 40px;
+
+    }
+
+    #class_div_right img {
+        height: 200px;
+        width: 400px;
+    }
+}
+
+@media only screen and (max-width: 470px) {
+    #class_div_right img {
+        height: 100px;
+        width: 300px;
+    }
+
+    #exp_heading {
+        font-size: 60px;
+    }
+
+}
+
+@media only screen and (max-width: 375px) {
+    .contact .form_about_me{
+        width: 300px;
+    }
+
+    .form_about_me .in_text {
+        height: 40px;
+        width: 300px
+    }
+    
+    .form_about_me button {
+        width: 300px;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .login .form_about_me {
+        margin: auto;
+        height: 350px;
+        width: 250px;
+    }
+
+    .signup .form_about_me {
+        width: 250px;
+    }
+
+    .form_about_me .in_text {
+        width: 250px;
+    }
+
+    .form_about_me .btn {
+        width: 250px;
+    }
+}
+
+/* JavaScript Styles */
+
+#email_js_valid, #pass_js_valid {
+    color: red;
+}
+
+/* php pages */
+
+.error {
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    position: absolute;
+    left: 0;
+    top: 35%;
+}
+
+.login-title_3 {
+    position: absolute;
+}
+
+.btn_edit {
+    height: 30px;
+    width: 100px;
+    margin-top: 20px;
+    margin-bottom: 100px;
+    text-align: center;
+}
+
+.skills .form_about_me {
+    margin-top: 100px;
+}
+
