@@ -3,10 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Skills;
-use App\Edu;
+use App\hire_me;
 
-class SkillsController extends Controller
+class Hire_meController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +14,8 @@ class SkillsController extends Controller
      */
     public function index()
     {
-        $skills = Skills::all()->toArray();       
-        $edu = Edu::all()->toArray(); 
-        return view('skills.index', compact('skills','edu'));
+        $hire_me = hire_me::all()->toArray();        
+        return view('hire_me.index', compact('hire_me'));
     }
 
     /**
@@ -27,7 +25,7 @@ class SkillsController extends Controller
      */
     public function create()
     {
-        return view('skills.create');
+        return view('hire_me.create');
     }
 
     /**
@@ -38,17 +36,18 @@ class SkillsController extends Controller
      */
     public function store(Request $request)
     {
-        
         $request->validate([          
-            'skill_name' => 'required',          
-            'description'=> 'required',
+            'price' => 'required',          
+            'services'=> 'required',
+            'contact'=> 'required'
             ]);         
 
-            $skills = new Skills();        
-            $skills->skill_name=$request->get('skill_name');        
-            $skills->description=$request->get('description');               
+            $skills = new hire_me();        
+            $skills->price=$request->get('price');        
+            $skills->services=$request->get('services');   
+            $skills->contact=$request->get('contact');
             $skills->save();       
-            return redirect('skills')->with('success', 'Data  has been added successfully.'); 
+            return redirect('hire_me')->with('success', 'Data  has been added successfully.'); 
     }
 
     /**
@@ -70,8 +69,8 @@ class SkillsController extends Controller
      */
     public function edit($id)
     {
-        $skills = skills::find($id);        
-        return view('skills.edit',compact('skills','id'));
+        $hire_me = hire_me::find($id);        
+        return view('hire_me.edit',compact('hire_me','id'));
     }
 
     /**
@@ -82,18 +81,18 @@ class SkillsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {      
-
+    {
         $request->validate([          
-            'skill_name' => 'required',          
-            'description'=> 'required',
-            ]);        
-
-            $skills = skills::find($id);          
-            $skills->skill_name=$request->get('skill_name');        
-            $skills->description=$request->get('description');               
+            'price' => 'required',          
+            'services'=> 'required',
+            'contact'=> 'required'
+            ]);         
+            $skills = hire_me::find($id);        
+            $skills->price=$request->get('price');        
+            $skills->services=$request->get('services');   
+            $skills->contact=$request->get('contact');
             $skills->save();       
-            return redirect('skills')->with('success', 'Data  has been updated successfully.'); 
+            return redirect('hire_me')->with('success', 'Data  has been updated successfully.'); 
     }
 
     /**
@@ -104,8 +103,8 @@ class SkillsController extends Controller
      */
     public function destroy($id)
     {
-        $skills = skills::find($id);        
-        $skills->delete();        
-        return redirect('skills')->with('success','data has been  deleted');
+        $form = hire_me::find($id);        
+        $form->delete();        
+        return redirect('hire_me')->with('success','Entry has been  deleted');
     }
 }

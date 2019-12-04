@@ -65,7 +65,28 @@
             <h1 id="exp_heading">Education</h1>
             <p id="exp_para">I'm looking to expand my portfolio while I'm on top and while <br /> I'm young Gurvir Singh Tarlok Singh Bhogal brings you content to life in stunning Quality.</p>
         </div>
-    
+
+        @foreach($edu as $form)  
+        <div class='exp_date_main'>
+             <div class='exp_date_main_content'>
+                 {{-- <p>{{$form['date_acquired']}}</p> --}}
+                 <p>{{$form['degree']}}</p>
+             </div>
+             
+             <div class='edmc_desc'>
+                 <p>{{$form['description']}}</p>
+             </div>
+         </div>
+         <a href="{{action('SkillsController@edit', $form['id'])}}" class="btn btn-warning">Edit</a>
+         <form action="{{action('SkillsController@destroy', $form['id'])}}" method="post">            
+             {{csrf_field()}}            
+             <input name="_method" type="hidden" value="DELETE">            
+             <button class="btn btn-danger" type="submit">Delete</button>          
+         </form>   
+         @endforeach  
+         <br/>
+         <a href="skills/create_edu" class="btn">Add Data</a>
+
     </div>
 </div>
 </section>

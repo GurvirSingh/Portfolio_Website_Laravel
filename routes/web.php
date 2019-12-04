@@ -35,10 +35,6 @@ Route::get('/blog', function () {
     return view('blog');
 });
 
-Route::get('/hire_me', function () {
-    return view('hire_me');
-});
-
 Route::get('/login', function () {
     return view('login');
 });
@@ -50,3 +46,5 @@ Route::resource('signup','SignupController');
 Route::resource('contact','ContactController');
 
 Route::resource('portfolio','PortfolioController');
+
+Route::resource('hire_me','Hire_meController');
