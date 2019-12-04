@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Signup;
+use App\Contact;
 
-class SignupController extends Controller
+class ContactController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class SignupController extends Controller
      */
     public function index()
     {
-        //
+        return view('contact.create');
     }
 
     /**
@@ -24,7 +24,7 @@ class SignupController extends Controller
      */
     public function create()
     {
-        return view('signup.create');
+        return view('contact.create');
     }
 
     /**
@@ -35,24 +35,18 @@ class SignupController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([          
-            'firstname' => 'required|regex:/^[a-zA-Z ]*$/',          
-            'lastname'=> 'required|regex:/^[a-zA-Z ]*$/',
-            'email'=> 'required|email:rfc|unique:signups',
-            'password'=> 'required',
-            'contact'=> 'required|regex:/[0-9]{10}/',
-            'designation'=> 'required|regex:/^[a-zA-Z ]*$/',
-        ]);         
+        $request->validate([         
+            'name' => 'required',          
+            'email'=> 'required',  
+            'contactno'=> 'required',      
+            ]);   
 
-        $Signup = new Signup();        
-        $Signup->firstname=$request->get('firstname');        
-        $Signup->lastname=$request->get('lastname'); 
-        $Signup->email=$request->get('email');
-        $Signup->password=$request->get('password');
-        $Signup->contact=$request->get('contact');
-        $Signup->designation=$request->get('designation');           
-        $Signup->save();       
-        return redirect('signup/create')->with('success', 'Registered Successfully'); 
+            $con = new Contact();                
+            $con->name=$request->get('name');     
+            $con->phone=$request->get('contactno');             
+            $con->email=$request->get('email');        
+            $con->save();        
+            return redirect('contact')->with('success', 'An Email to the Admin has been sent to contact you');
     }
 
     /**

@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Signup;
+use App\Portfolio;
 
-class SignupController extends Controller
+class PortfolioController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class SignupController extends Controller
      */
     public function index()
     {
-        //
+        return view('portfolio.index'); 
     }
 
     /**
@@ -24,7 +24,7 @@ class SignupController extends Controller
      */
     public function create()
     {
-        return view('signup.create');
+        return view('portfolio.create');
     }
 
     /**
@@ -35,24 +35,18 @@ class SignupController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([          
-            'firstname' => 'required|regex:/^[a-zA-Z ]*$/',          
-            'lastname'=> 'required|regex:/^[a-zA-Z ]*$/',
-            'email'=> 'required|email:rfc|unique:signups',
-            'password'=> 'required',
-            'contact'=> 'required|regex:/[0-9]{10}/',
-            'designation'=> 'required|regex:/^[a-zA-Z ]*$/',
-        ]);         
+        $request->validate([         
+            'image' => 'required',          
+            'description'=> 'required',  
+            'position'=> 'required',      
+            ]);   
 
-        $Signup = new Signup();        
-        $Signup->firstname=$request->get('firstname');        
-        $Signup->lastname=$request->get('lastname'); 
-        $Signup->email=$request->get('email');
-        $Signup->password=$request->get('password');
-        $Signup->contact=$request->get('contact');
-        $Signup->designation=$request->get('designation');           
-        $Signup->save();       
-        return redirect('signup/create')->with('success', 'Registered Successfully'); 
+            $con = new Portfolio();                
+            $con->image=$request->get('image');     
+            $con->description=$request->get('description');             
+            $con->position=$request->get('position');        
+            $con->save();        
+            return redirect('portfolio')->with('success', 'Added successfully');
     }
 
     /**

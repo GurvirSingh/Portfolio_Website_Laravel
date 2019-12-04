@@ -12,13 +12,31 @@
 
 <div class="cust2">
     <h1>Contact Me</h1>
-    <p id="pro">Have a project you like to discuss.</p>
+    <p id="pro">Have a project you like to discuss?.</p>
+    
+    @if ($errors->any())      
+    <div class="alert alert-danger">          
+        <ul>              
+            @foreach ($errors->all() as $error)                  
+            <li>{{ $error }}</li>              
+            @endforeach          
+        </ul>      
+    </div><br />      
+    @endif  
+
+    @if (\Session::has('success'))      
+        <div class="alert alert-success">        
+            <p>{{ \Session::get('success') }}</p>      
+        </div><br />     
+    @endif 
+
     <div class="contact">
-        <form method="POST" action="contact.php" class="form_about_me" novalidate>
+        <form method="post" action="{{url('contact')}}">
+        {{csrf_field()}}
         <p>To Contact Me Please Fill The Form Below:</p>
             <label for="cfName">Name:</label>
             <br/>
-            <input type="text" id="cfName" name="cfName" class="in_text" placeholder="Enter your full name" pattern="[a-zA-Z ]{2,}" title="Text only" required>
+            <input type="text" id="cfName" name="name" class="in_text" placeholder="Enter your full name" pattern="[a-zA-Z ]{2,}" title="Text only" required>
             <p id="email_js_valid">
             <?php 
                 if(isset($_GET['sname']) && $_GET['sname'] == 1) {
@@ -31,7 +49,7 @@
 
             <label for="cemail">Email:</label>
             <br/>
-            <input type="email" id="cemail" name="cemail" class="in_text" placeholder="Enter your email" pattern="[a-zA-Z0-9._]+@[a-zA-Z0-9.-]+.[a-z]{2,}" title="example@example.com" required>
+            <input type="email" id="cemail" name="email" class="in_text" placeholder="Enter your email" pattern="[a-zA-Z0-9._]+@[a-zA-Z0-9.-]+.[a-z]{2,}" title="example@example.com" required>
             <p id="email_js_valid">
             <?php 
                 if(isset($_GET['email']) && $_GET['email'] == 1) {
@@ -44,7 +62,7 @@
 
             <label for="ccon">Contact:</label>
             <br/>
-            <input type="text" id="ccon" name="ccon" class="in_text" minlength="10" maxlength="10" placeholder="Enter your contact number" pattern="[0-9]{10}" title="Ex: 1234567890" required>
+            <input type="text" id="ccon" name="contactno" class="in_text" minlength="10" maxlength="10" placeholder="Enter your contact number" pattern="[0-9]{10}" title="Ex: 1234567890" required>
             <p id="email_js_valid">
             <?php 
                 if(isset($_GET['num']) && $_GET['num'] == 1) {
@@ -65,35 +83,4 @@
         </form>
     </div>
 </div>
-
-<script>
-    function validate() {
-    var name = document.getElementById("cfName").value;
-    var email = document.getElementById("cemail").value;
-    var contact = document.getElementById("ccon").value;
-
-    var regex_names = /[a-zA-Z ]{2,}/;
-    var regex_contact = /[0-9]{10}/;
-    var regex_email = /[a-zA-Z0-9.!#$%&’*+\/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-])/;
-    var err = 0;
-    if(!regex_names.test(name)) {
-        alert("Enter Atleast 2 characters in last name");
-        err++;
-        return false;
-    }
-    if(!regex_email.test(email)) {
-        alert("Enter Correct Email(eg: example@example.com)");
-        err++;
-        return false;
-    }
-    if(!regex_contact.test(contact)){
-        alert("Enter only 10 Digits in Contact Number");
-        err++;
-        return false;
-    }
-    if(err == 0) {
-        return true;
-    }
-    }
-</script>
 @endsection

@@ -27,10 +27,6 @@ Route::get('/skills', function () {
     return view('skills');
 });
 
-Route::get('/portfolio', function () {
-    return view('portfolio');
-});
-
 Route::get('/recommendation', function () {
     return view('recommendation');
 });
@@ -43,10 +39,6 @@ Route::get('/hire_me', function () {
     return view('hire_me');
 });
 
-Route::get('/contact', function () {
-    return view('contact');
-});
-
 Route::get('/login', function () {
     return view('login');
 });
@@ -54,3 +46,7 @@ Route::get('/login', function () {
 Route::resource('skills','SkillsController');
 
 Route::resource('signup','SignupController');
+
+Route::resource('contact','ContactController');
+
+Route::resource('portfolio','PortfolioController');

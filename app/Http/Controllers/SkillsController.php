@@ -44,11 +44,7 @@ class SkillsController extends Controller
 
             $skills = new Skills();        
             $skills->skill_name=$request->get('skill_name');        
-            $skills->description=$request->get('description');        
-            // $checkbox = implode(",", $request->get('option'));        
-            // $form->dropdown=$request->get('dropdown');        
-            // $form->radio=$request->get('radio');        
-            // $form->checkbox = $checkbox;         
+            $skills->description=$request->get('description');               
             $skills->save();       
             return redirect('skills')->with('success', 'Data  has been added successfully.'); 
     }
@@ -72,7 +68,8 @@ class SkillsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $skills = skills::find($id);        
+        return view('skills.edit',compact('skills','id'));
     }
 
     /**
@@ -83,8 +80,18 @@ class SkillsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {
-        //
+    {      
+
+        $request->validate([          
+            'skill_name' => 'required',          
+            'description'=> 'required',
+            ]);        
+
+            $skills = skills::find($id);          
+            $skills->skill_name=$request->get('skill_name');        
+            $skills->description=$request->get('description');               
+            $skills->save();       
+            return redirect('skills')->with('success', 'Data  has been updated successfully.'); 
     }
 
     /**
@@ -95,6 +102,8 @@ class SkillsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $skills = skills::find($id);        
+        $skills->delete();        
+        return redirect('skills')->with('success','data has been  deleted');
     }
 }

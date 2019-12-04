@@ -8,18 +8,22 @@
     </div>
     <div class="p_nav">
         <ul>
-            <a href='portfolio.php?show=1'><li>Show All</li></a>
-            <a href='portfolio.php?web=1'><li>Websites</li></a>
+            <a href='contact/index'><li>Show All</li></a>
+            <a href='create.php?web=1'><li>Websites</li></a>
             <a href='portfolio.php?app=1'><li>Apps</li></a>
             <a href='portfolio.php?des=1'><li>Design</li></a>
             <a href='portfolio.php?ph=1'><li>Photography</li></a>
         </ul>
     </div>
+    @if (\Session::has('success'))      
+    <div class="alert alert-success">        
+        <p>{{ \Session::get('success') }}</p>      
+    </div><br />     
+    @endif 
 
-
-    <?php
+@php
     // Define database connection variables
-    $host = "localhost";
+    $host = "127.0.0.1";
     $uname = "root";
     $pass = "";
     $db = "portfolio";
@@ -257,7 +261,7 @@
     }
 
         mysqli_close($conn);
-    ?>
+        @endphp
 
     <br /><br /><br /><br /><br />
 </div>

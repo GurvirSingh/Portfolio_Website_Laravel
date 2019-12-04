@@ -49,7 +49,15 @@
             <p>{{$form['description']}}</p>
         </div>
     </div>
-    @endforeach   
+    <a href="{{action('SkillsController@edit', $form['id'])}}" class="btn btn-warning">Edit</a>
+    <form action="{{action('SkillsController@destroy', $form['id'])}}" method="post">            
+        {{csrf_field()}}            
+        <input name="_method" type="hidden" value="DELETE">            
+        <button class="btn btn-danger" type="submit">Delete</button>          
+    </form>   
+    @endforeach  
+    <br/>
+    <a href="skills/create" class="btn">Add Data</a>
                 
 
     <div class="skills_div_2">

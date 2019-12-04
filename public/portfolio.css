@@ -15,6 +15,26 @@ header {
     background-color: #777777;
 }
 
+.alert-danger ul {
+    color:red;
+}
+
+.alert-danger ul li{
+    padding-bottom: 5px;
+}
+
+.alert-success {
+    color:green;
+}
+
+.btn {
+    background: linear-gradient(to right, #3fcaff 0%, #a4ffb0 51%, #3fcaff 100%);
+    background-size: 200% auto;
+    padding: 0px 35px;
+    color: #222222;
+    margin-left: 0%;
+}
+
 h1,
 h2,
 h3,
