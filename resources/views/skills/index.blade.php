@@ -77,16 +77,20 @@
                  <p>{{$form['description']}}</p>
              </div>
          </div>
-         <a href="{{action('SkillsController@edit', $form['id'])}}" class="btn btn-warning">Edit</a>
-         <form action="{{action('SkillsController@destroy', $form['id'])}}" method="post">            
+         <a href="{{action('EduController@edit', $form['id'])}}" class="btn btn-warning">Edit</a>
+         <form action="{{action('EduController@destroy', $form['id'])}}" method="post">            
              {{csrf_field()}}            
              <input name="_method" type="hidden" value="DELETE">            
              <button class="btn btn-danger" type="submit">Delete</button>          
          </form>   
          @endforeach  
          <br/>
-         <a href="skills/create_edu" class="btn">Add Data</a>
-
+         <a href="edu/create" class="btn">Add Data</a>
+         <br/>
+         <br/>
+         <br/>
+         <br/>
+         <br/>
     </div>
 </div>
 </section>

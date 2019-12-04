@@ -48,3 +48,5 @@ Route::resource('contact','ContactController');
 Route::resource('portfolio','PortfolioController');
 
 Route::resource('hire_me','Hire_meController');
+
+Route::resource('edu','EduController');
