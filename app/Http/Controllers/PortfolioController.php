@@ -14,7 +14,28 @@ class PortfolioController extends Controller
      */
     public function index()
     {
-        return view('portfolio.index'); 
+        $portfolio = Portfolio::all()->toArray();       
+        return view('portfolio.index', compact('portfolio'));
+    }
+    public function index_website()
+    {
+        $portfolio = Portfolio::all()->toArray();       
+        return view('portfolio.website', compact('portfolio'));
+    }
+    public function index_apps()
+    {
+        $portfolio = Portfolio::all()->toArray();       
+        return view('portfolio.apps', compact('portfolio'));
+    }
+    public function index_design()
+    {
+        $portfolio = Portfolio::all()->toArray();       
+        return view('portfolio.design', compact('portfolio'));
+    }
+    public function index_photography()
+    {
+        $portfolio = Portfolio::all()->toArray();       
+        return view('portfolio.photography', compact('portfolio'));
     }
 
     /**
@@ -68,7 +89,8 @@ class PortfolioController extends Controller
      */
     public function edit($id)
     {
-        //
+        $skills = Portfolio::find($id);        
+        return view('portfolio.edit',compact('skills','id'));
     }
 
     /**
@@ -80,7 +102,18 @@ class PortfolioController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([          
+            'image' => 'required',          
+            'description'=> 'required',
+            'position'=> 'required',
+            ]);        
+
+            $skills = Portfolio::find($id);          
+            $skills->image=$request->get('image');        
+            $skills->description=$request->get('description'); 
+            $skills->position=$request->get('position');               
+            $skills->save();       
+            return redirect('portfolio')->with('success', 'Data  has been updated successfully.'); 
     }
 
     /**
@@ -91,6 +124,8 @@ class PortfolioController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $skills = Portfolio::find($id);        
+        $skills->delete();        
+        return redirect('portfolio')->with('success','data has been  deleted');
     }
 }

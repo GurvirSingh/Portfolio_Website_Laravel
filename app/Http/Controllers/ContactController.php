@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Contact;
+use Mail;
 
 class ContactController extends Controller
 {
@@ -37,8 +38,8 @@ class ContactController extends Controller
     {
         $request->validate([         
             'name' => 'required',          
-            'email'=> 'required',  
-            'contactno'=> 'required',      
+            'email'=> 'required|email',  
+            'contactno'=> 'required|numeric',      
             ]);   
 
             $con = new Contact();                
@@ -46,6 +47,15 @@ class ContactController extends Controller
             $con->phone=$request->get('contactno');             
             $con->email=$request->get('email');        
             $con->save();        
+
+            $email['email'] = $request->get('name');
+            $email['name'] = $request->get('email');
+            $email['contactno'] = $request->get('contactno');
+            Mail::send('contact.email',$email, function($msg){
+                $msg->to('gurvirbhogal10@gmail.com')
+                    ->subject('CONTACT FORM FOR gurvirbhogal.uta.cloud');
+            });
+
             return redirect('contact')->with('success', 'An Email to the Admin has been sent to contact you');
     }
 

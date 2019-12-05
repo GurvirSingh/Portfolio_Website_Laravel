@@ -25,14 +25,14 @@
     </div><br />      
     @endif
     
-    <form method="post" action="{{action('SkillsController@update', $id)}}">        
+    <form method="post" action="{{action('EduController@update', $id)}}">        
         {{csrf_field()}}        
         <input name="_method" type="hidden" value="PATCH">        
         <div class="row">          
             <div class="col-md-4"></div>          
             <div class="form-group col-md-4">            
-                <label for="name">Skill Name:</label>            
-                <input type="text" class="form-control" name="skill_name" value="{{$skills->skill_name}}">          
+                <label for="name">Degree:</label>            
+                <input type="text" class="form-control" name="degree" value="{{$skills->degree}}">          
             </div>        
         </div>        
         <div class="row">          
@@ -46,7 +46,7 @@
             <div class="col-md-4"></div>            
                 <div class="form-group col-md-4">             
                     <label for="price">date acquired:</label>              
-                    <input type="text" class="form-control" name="date_acquired" value="{{$skills->date_acquired}}">            
+                    <input type="text" class="form-control" name="date" value="{{$skills->date}}">            
                 </div>  
         </div>            
     </div>            

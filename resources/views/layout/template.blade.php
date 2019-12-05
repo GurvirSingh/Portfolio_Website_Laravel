@@ -41,20 +41,42 @@
                 <a href="/contact" class="collapse">
                     <li>CONTACT</li>
                 </a>
-                <a href="/login" <?php if(isset($_SESSION['email'])) { echo 'class="none"';}?>>
+                {{-- <a href="/login" >
                     <li>LOGIN</li>
                 </a>
-                <a href="/signup/create" <?php if(isset($_SESSION['email'])) { echo 'class="none"';}?>>
+                <a href="/signup/create">
                     <li>SIGNUP</li>
-                </a>
-                <?php 
-                    if(isset($_SESSION['email']))
-                    { 
-                        echo "<a href='logout.php'>
-                        <li>LOG OUT</li>
-                        </a>";
-                    }
-                ?>
+                </a> --}}
+                @guest
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('login') }}">{{ __('LOGIN') }}</a>
+                </li>
+                
+                @if (Route::has('register'))
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('register') }}">{{ __('REGISTER') }}</a>
+                    </li>
+                @endif
+
+                @else
+                            <li class="nav-item dropdown">
+                                {{-- <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                </a> --}}
+
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('LOGOUT') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                            </li>
+                        @endguest
+
+
                 <a href="#" onclick="more()" class="nav_more">
                     <li>MORE <i class="fas fa-chevron-down"></i></li>
                 </a>

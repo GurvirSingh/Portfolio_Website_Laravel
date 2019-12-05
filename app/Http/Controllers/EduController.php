@@ -68,7 +68,8 @@ class EduController extends Controller
      */
     public function edit($id)
     {
-        //
+        $skills = Edu::find($id);        
+        return view('edu.edit',compact('skills','id'));
     }
 
     /**
@@ -80,7 +81,18 @@ class EduController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([          
+            'degree' => 'required',          
+            'description'=> 'required',
+            'date'=> 'required',
+            ]);        
+
+            $skills = Edu::find($id);          
+            $skills->degree=$request->get('degree');        
+            $skills->description=$request->get('description'); 
+            $skills->date=$request->get('date');               
+            $skills->save();       
+            return redirect('skills')->with('success', 'Education credentials has been updated successfully.'); 
     }
 
     /**

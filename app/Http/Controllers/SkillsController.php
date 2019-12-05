@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Skills;
 use App\Edu;
+use App\User;
 
 class SkillsController extends Controller
 {
@@ -17,7 +18,7 @@ class SkillsController extends Controller
     {
         $skills = Skills::all()->toArray();       
         $edu = Edu::all()->toArray(); 
-        return view('skills.index', compact('skills','edu'));
+        return view('skills.index', compact('skills','edu','user'));
     }
 
     /**
@@ -42,11 +43,13 @@ class SkillsController extends Controller
         $request->validate([          
             'skill_name' => 'required',          
             'description'=> 'required',
+            'date_acquired'=> 'required',
             ]);         
 
             $skills = new Skills();        
             $skills->skill_name=$request->get('skill_name');        
-            $skills->description=$request->get('description');               
+            $skills->description=$request->get('description');  
+            $skills->date_acquired=$request->get('date_acquired');   
             $skills->save();       
             return redirect('skills')->with('success', 'Data  has been added successfully.'); 
     }
@@ -87,11 +90,13 @@ class SkillsController extends Controller
         $request->validate([          
             'skill_name' => 'required',          
             'description'=> 'required',
+            'date_acquired'=> 'required',
             ]);        
 
             $skills = skills::find($id);          
             $skills->skill_name=$request->get('skill_name');        
-            $skills->description=$request->get('description');               
+            $skills->description=$request->get('description'); 
+            $skills->date_acquired=$request->get('date_acquired');               
             $skills->save();       
             return redirect('skills')->with('success', 'Data  has been updated successfully.'); 
     }

@@ -31,7 +31,7 @@
     @endif 
 
     <div class="contact">
-        <form method="post" action="{{url('contact')}}">
+        <form method="post" action="{{url('contact')}}" class="form_about_me">
         {{csrf_field()}}
         <p>To Contact Me Please Fill The Form Below:</p>
             <label for="cfName">Name:</label>
@@ -83,4 +83,34 @@
         </form>
     </div>
 </div>
+<script>
+    function validate() {
+    var name = document.getElementById("cfName").value;
+    var email = document.getElementById("cemail").value;
+    var contact = document.getElementById("ccon").value;
+
+    var regex_names = /[a-zA-Z ]{2,}/;
+    var regex_contact = /[0-9]{10}/;
+    var regex_email = /[a-zA-Z0-9.!#$%&’*+\/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-])/;
+    var err = 0;
+    if(!regex_names.test(name)) {
+        alert("Enter Atleast 2 characters in name");
+        err++;
+        return false;
+    }
+    if(!regex_email.test(email)) {
+        alert("Enter Correct Email(eg: example@example.com)");
+        err++;
+        return false;
+    }
+    if(!regex_contact.test(contact)){
+        alert("Enter only 10 Digits in Contact Number");
+        err++;
+        return false;
+    }
+    if(err == 0) {
+        return true;
+    }
+    }
+</script>
 @endsection

@@ -44,7 +44,7 @@ class SignupController extends Controller
             'designation'=> 'required|regex:/^[a-zA-Z ]*$/',
         ]);         
 
-        $Signup = new Signup();        
+        $Signup = new Users();        
         $Signup->firstname=$request->get('firstname');        
         $Signup->lastname=$request->get('lastname'); 
         $Signup->email=$request->get('email');

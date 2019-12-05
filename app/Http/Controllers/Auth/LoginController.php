@@ -20,12 +20,21 @@ class LoginController extends Controller
 
     use AuthenticatesUsers;
 
+    protected function authenticated($request, $user)
+    {
+        if($user->role === 'admin') {
+            return redirect()->intended('/hire_me');
+        }
+
+        return redirect()->intended('/home');
+    }
+
     /**
      * Where to redirect users after login.
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    // protected $redirectTo = '/home';
 
     /**
      * Create a new controller instance.

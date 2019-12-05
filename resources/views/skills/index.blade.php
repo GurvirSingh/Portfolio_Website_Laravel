@@ -41,15 +41,27 @@
     @foreach($skills as $form)  
    <div class='exp_date_main'>
         <div class='exp_date_main_content'>
-            {{-- <p>{{$form['date_acquired']}}</p> --}}
             <p>{{$form['skill_name']}}</p>
+            <p>{{$form['date_acquired']}}</p>
         </div>
         
         <div class='edmc_desc'>
             <p>{{$form['description']}}</p>
         </div>
     </div>
-    <a href="{{action('SkillsController@edit', $form['id'])}}" class="btn btn-warning">Edit</a>
+
+
+    @if(Auth::check() && Auth::user()->role == 'admin')
+            <a href="{{action('SkillsController@edit', $form['id'])}}" class="btn btn-warning">Edit</a>
+            <form action="{{action('SkillsController@destroy', $form['id'])}}" method="post">            
+                {{csrf_field()}}            
+                <input name="_method" type="hidden" value="DELETE">            
+                <button class="btn btn-danger" type="submit">Delete</button>          
+            </form>    
+            <br/>
+            <a href="skills/create" class="btn">Add Data</a>
+    @endif
+    {{-- <a href="{{action('SkillsController@edit', $form['id'])}}" class="btn btn-warning">Edit</a>
     <form action="{{action('SkillsController@destroy', $form['id'])}}" method="post">            
         {{csrf_field()}}            
         <input name="_method" type="hidden" value="DELETE">            
@@ -57,8 +69,8 @@
     </form>   
     @endforeach  
     <br/>
-    <a href="skills/create" class="btn">Add Data</a>
-                
+    <a href="skills/create" class="btn">Add Data</a> --}}
+    @endforeach    
 
     <div class="skills_div_2">
     <div id="exp_content">
@@ -69,23 +81,27 @@
         @foreach($edu as $form)  
         <div class='exp_date_main'>
              <div class='exp_date_main_content'>
-                 {{-- <p>{{$form['date_acquired']}}</p> --}}
                  <p>{{$form['degree']}}</p>
+                 <p>{{$form['date']}}</p>
              </div>
              
              <div class='edmc_desc'>
                  <p>{{$form['description']}}</p>
              </div>
          </div>
+         @if(Auth::check() && Auth::user()->role == 'admin')
          <a href="{{action('EduController@edit', $form['id'])}}" class="btn btn-warning">Edit</a>
          <form action="{{action('EduController@destroy', $form['id'])}}" method="post">            
              {{csrf_field()}}            
              <input name="_method" type="hidden" value="DELETE">            
              <button class="btn btn-danger" type="submit">Delete</button>          
          </form>   
-         @endforeach  
          <br/>
          <a href="edu/create" class="btn">Add Data</a>
+         @endif
+         @endforeach  
+         <br/>
+         
          <br/>
          <br/>
          <br/>
@@ -95,51 +111,3 @@
 </div>
 </section>
 @endsection
-
-{{-- <!DOCTYPE html>
-<html>  
-<head>    
-    <meta charset="utf-8">    
-    <title>Index Page</title>    
-    <link rel="stylesheet" href="{{asset('portfolio.css')}}">
-</head>  
-
-<body>    
-<div class="container">    
-    <br />    
-    @if (\Session::has('success'))      
-    <div class="alert alert-success">        
-        <p>{{ \Session::get('success') }}</p>      
-    </div><br />     
-    @endif    
-    <table class="table table-striped">    
-        <thead>      
-            <tr>
-                <th>ID</th>        
-                <th>skill_name</th>        
-                <th>description</th>        
-                <th>date</th>      
-            </tr>    
-        </thead>    
-        <tbody>      
-            @foreach($skills as $form)      
-            <tr>        
-                <td>{{$form['skill_key']}}</td>        
-                <td>{{$form['skill_name']}}</td>        
-                <td>{{$form['description']}}</td>    
-                <td>{{$form['date_acquired']}}</td>      
-                <td><a href="{{action('SkillsController@edit', $form['skill_key'])}}" class="btn btn-warning">Edit</a></td>        
-                <td>          
-                    <form action="{{action('SkillsController@destroy', $form['skill_key'])}}" method="post">            
-                        {{csrf_field()}}            
-                        <input name="_method" type="hidden" value="DELETE">            
-                        <button class="btn btn-danger" type="submit">Delete</button>          
-                    </form>        
-                </td>      
-            </tr>      
-            @endforeach    
-        </tbody>  
-    </table>  
-</div>
-</body>
-</html> --}}

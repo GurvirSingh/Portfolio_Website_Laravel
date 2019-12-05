@@ -35,10 +35,6 @@ Route::get('/blog', function () {
     return view('blog');
 });
 
-Route::get('/login', function () {
-    return view('login');
-});
-
 Route::resource('skills','SkillsController');
 
 Route::resource('signup','SignupController');
@@ -50,3 +46,14 @@ Route::resource('portfolio','PortfolioController');
 Route::resource('hire_me','Hire_meController');
 
 Route::resource('edu','EduController');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/website','PortfolioController@index_website');
+
+Route::get('/apps','PortfolioController@index_apps');
+
+Route::get('/design','PortfolioController@index_design');
+
+Route::get('/photography','PortfolioController@index_photography');

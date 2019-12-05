@@ -35,6 +35,10 @@ header {
     margin-left: 0%;
 }
 
+.nav-item a:hover {
+    color: white;
+}
+
 h1,
 h2,
 h3,

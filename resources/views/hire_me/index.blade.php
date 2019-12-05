@@ -25,15 +25,20 @@
                 <a href="contact.html">{{$form['contact']}}</a>
             </div>
         </div>
+        @if(Auth::check() && Auth::user()->role == 'admin')
         <a href="{{action('Hire_meController@edit', $form['id'])}}" class="btn btn-warning">Edit</a>
         <form action="{{action('Hire_meController@destroy', $form['id'])}}" method="post">            
                 {{csrf_field()}}            
                 <input name="_method" type="hidden" value="DELETE">            
                 <button class="btn btn-danger" type="submit">Delete</button>          
             </form>   
+            
+            @endif
         @endforeach  
     </div>
+    @if(Auth::check() && Auth::user()->role == 'admin')
     <a href="hire_me/create" class="btn">Add Data</a>
+    @endif
 
     <div class="skills_bars">
         <div id="exp_content">
